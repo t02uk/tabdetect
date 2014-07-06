@@ -6,7 +6,7 @@ if exists("g:loaded_tabautodetect")
 endif
 
 if !exists("g:tabautodetect_minline")
-	let g:tabautodetect_minline = 50
+	let g:tabautodetect_minline = 500
 endif
 
 
@@ -69,8 +69,9 @@ endfunc
 augroup plugin-tabautodetect
 	autocmd!
 	autocmd BufReadPost * call s:do_tabautodetect()
+	autocmd BufWritePost * call s:do_tabautodetect()
 augroup END
 
 let g:loaded_tabautodetect = 1
 
-" vim: ts=2:
+" vim: tabstop=2:
