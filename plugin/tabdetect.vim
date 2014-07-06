@@ -5,6 +5,14 @@ if exists("g:loaded_tabautodetect")
 	finish
 endif
 
+if &exrc
+	if filereadable('.vimrc') ||
+	  \ filereadable('.gvimrc') ||
+	  \ filereadable('.exrc')
+		finish
+	endif
+endif
+
 if !exists("g:tabautodetect_minline")
 	let g:tabautodetect_minline = 500
 endif
